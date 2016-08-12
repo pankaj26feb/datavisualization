@@ -130,6 +130,7 @@ p2
 ###  Histogram for age and crime by ethnicity
 
 ```{r}
+### Vis4
 p3 <- plot_ly(ds2, x = african_am$Age,type="histogram",name="African American") %>% add_trace(x =indian_am$Age , opacity = 0.6, type = "histogram",name="American Indian") %>% add_trace(x =asian$Age , opacity = 0.6, type = "histogram",name="Asian") %>% add_trace(x =hispanic$Age , opacity = 0.6, type = "histogram",name="Hispanic") %>% add_trace(x =middle_east$Age , opacity = 0.6, type = "histogram",name="Middle East") %>% add_trace(x =anglo$Age , opacity = 0.6, type = "histogram",name="Anglo") %>% add_trace(x =native_hawaian$Age , opacity = 0.6, type = "histogram",name="Nataive_Hawain") %>% layout(barmode="overlay")
 p3
 ```
@@ -137,3 +138,30 @@ p3
 
 *** 
   This graph shows the record count of crime history by each ethinicity.
+  
+  ### Histogram of custody type and Charge Status
+  
+  
+  ```{r}
+  ### Vis5
+ p4 <- ggplot(data = ds2, aes(x = Custody.Type, fill = Charges.Status))+
+  geom_bar(position = "dodge")
+  ggplotly(p4)
+ p4
+ ```
+ 
+ ***
+  This graph shows the histogram for custody type and Charge Status
+  
+  ###  Histogram for age and crime by Gender
+  
+ ```{r}
+  ### Vis6
+ p5 <- plot_ly(ds2, x = Sex$Age,type="histogram",name="Male") %>% add_trace(x =Sex$Age , opacity = 0.6, type = "histogram",name="Female") %>% layout(barmode="overlay")
+ p5
+ ```
+ 
+ ***
+ This graph shows the record count of crime history by Gender
+
+  
